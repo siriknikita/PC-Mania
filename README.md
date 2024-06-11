@@ -5,8 +5,18 @@ The PC Mania is the Coursework website built using Flask with interactive and us
 - Flask
 - MySQL Database
 - SQL Alchemy for ORM control over the database
-## DEPLOYMENT STAGE
-This website was deployed on Render.com with the purpose of demonstration and availability to anyone who want to get access to the website.
+## LOCAL USAGE
+To use the website locally, do the following steps:
+1. Open the terminal in desired folder.
+2. Run the following command:
+```sh
+git clone https://github.com/siriknikita/PC-Mania.git
+pip install -r requirements.txt
+python run.py
+```
+Note: You can copy the command using the box on the top right corner of the box.
+3. Open the provided link next to the **Running on** text.
+4. Build your first custom PC without any issues!
 ## LESSONS LEARNED
 1. A new way of thinking about project structure and the problems I want to solve via developing the website.
 2. A deep understanding of deployment, as well as it's importance in the development cycle.
