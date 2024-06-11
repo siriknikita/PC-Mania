@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}
+Configuration Page
+{% endblock %}
+
+{% block content %}
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-dark" style="color:white">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">You have the following configuration:</h1>
+        <table class="table table-hover table-dark">
+            <tbody>
+            <tr>
+                <td>Motherboard {{ config["motherboard"]["name"] }}:
+                    {{ config["motherboard"]["form_factor"] }}  Socket
+                    {{ config["motherboard"]["socket"] }}  Chipset
+                    {{ config["motherboard"]["chipset"] }}
+                </td>
+            </tr>
+            <tr>
+                <td>CPU {{ config["cpu"]["name"] }}:
+                Socket {{ config["cpu"]["socket"] }} Clock {{ config["cpu"]["base_clock"] }} GHz
+                Turbo {{ config["cpu"]["turbo_clock"] }} {{ config["cpu"]["number_of_cores"] }} Cores
+                {{ config["cpu"]["number_of_threads"] }} Threads
+                </td>
+            </tr>
+            <tr>
+                <td>Cooler {{ config["cooler"]["name"] }}:
+                Socket {{ config["cooler"]["compatible_socket"] }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Case {{ config["case"]["name"] }}: Form Factor {{ config["case"]["motherboard_form_factor"] }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    RAM {{ config["ram"]["name"] }}: {{ config["ram"]["size"] }} GB {{ config["ram"]["ram_type"] }}
+                    Kit of {{ config["ram"]["sticks"] }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    HDD {{ config["hdd"]["name"] }}: {{ config["hdd"]["size_in_tb"] }} TB {{ config["hdd"]["rpm"] }} RPM
+                    {{ config["hdd"]["cache_in_mb"] }} MB Cache
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Graphical Card {{ config["graphical_card"]["name"] }}: {{ config["graphical_card"]["graphic_card"] }}
+                    {{ config["graphical_card"]["vram"] }} GB {{ config["graphical_card"]["tdp"] }} W
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SSD: {{ config["ssd"]["name"] }}: {{ config["ssd"]["size_in_gb"] }} GB
+                    {{ config["ssd"]["protocol"] }} Protocol {{ config["ssd"]["form_factor"] }} Format
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Power Supply {{ config["power_supply"]["name"] }}: {{ config["power_supply"]["size"] }}
+                    {{ config["power_supply"]["power_supply_watt"] }}W
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <h3>Total cost of this build: {{ total_cost }}$</h3>
+        <a class="btn btn-primary" href="{{ url_for('constructor_page') }}">Rebuild the PC</a>
+        <a class="btn btn-primary" href="{{ url_for('submit_build_page') }}" onclick="return confirm('Are you sure?')">
+            Submit the build
+        </a>
+    </div>
+    <div class="product-device box-shadow d-none d-md-block"></div>
+    <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>
+{% endblock %}

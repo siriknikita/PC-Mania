@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+CPU Choice
+{% endblock %}
+{% block content %}
+<h1>CPU Choice</h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Socket</th>
+            <th scope="col">Base Clock</th>
+            <th scope="col">Turbo Clock</th>
+            <th scope="col">Number of cores</th>
+            <th scope="col">Number of threads</th>
+            <th scope="col">Price</th>
+            <th scope="col">Other</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cpus %}
+        {% include 'includes/items_modals.html' %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.socket }}</td>
+            <td>{{ item.base_clock }}</td>
+            <td>{{ item.turbo_clock }}</td>
+            <td>{{ item.number_of_cores }}</td>
+            <td>{{ item.number_of_threads }}</td>
+            <td>{{ item.price }}$</td>
+            <td>
+                <button class="btn btn-outline btn-success" data-toggle="modal"
+                    data-target="#Modal-AddingConfirm-{{ item.id }}">Choose this CPU</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

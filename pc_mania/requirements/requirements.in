@@ -1,0 +1,10 @@
+# app
+flask
+python-dotenv
+starlette
+
+# db
+pymysql
+
+# other
+pip-tools

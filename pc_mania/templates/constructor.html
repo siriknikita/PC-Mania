@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% block additional %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% endblock %}
+{% block title %}
+Constructor
+{% endblock %}
+{% block content %}
+<div class="container mx-auto mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card normal">
+                <img src="https://preview.redd.it/x9flpykh0cq81.png?width=640&crop=smart&auto=webp&s=99d3adbc549905d0fc62b2b16aeb2f0b01b1cf97" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Motherboard</h5>
+                    <p class="card-text">Allows you to choose a motherboard you want to use in your PC setup.</p>
+                    <a href="{{ url_for('motherboards_page') }}" class="btn mr-2">
+                    <i class="fas fa-link"></i>
+                    Click here to select a part
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status %}normal{% else %}locked{% endif %}">
+                <img src="https://img.freepik.com/premium-vector/futuristic-microchip-processor-quantum-computer-database-concept-modern-cpu-illustration-central-computer-processors-digital-chip-with-hud-elements-tech-futuristic-template_122058-1447.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">CPU</h5>
+                    <p class="card-text">Allows you to choose a CPU you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status %}
+                    <a href="{{ url_for('cpus_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    <div class="message">You haven't chosen a motherboard yet</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status %}normal{% else %}locked{% endif %}">
+                <img src="https://d1lss44hh2trtw.cloudfront.net/assets/article/2018/02/07/selecting-the-best-cpu-cooler-for-your-PC-guide-inline-11_1200x500.JPG" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Cooler</h5>
+                    <p class="card-text">Allows you to choose a Cooler you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status %}
+                    <a href="{{ url_for('coolers_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    <div class="message">You haven't chosen a motherboard yet</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status %}normal{% else %}locked{% endif %}">
+                <img src="https://www.yankodesign.com/images/design_news/2021/09/this-sci-fi-transparent-pc-case-is-a-symphony-of-performance-and-looks/Crystal-PC-Case-Concept-by-Alex-Casabo_Desktop-10.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Case</h5>
+                    <p class="card-text">Allows you to choose a Case you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status %}
+                    <a href="{{ url_for('cases_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    <div class="message">You haven't chosen a motherboard yet</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status %}normal{% else %}locked{% endif %}">
+                <img src="https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2NvbXB1dGVyLXJhbS5qcGciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOiIxMjAwIn19fQ==" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">RAM</h5>
+                    <p class="card-text">Allows you to choose a RAM you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status %}
+                    <a href="{{ url_for('rams_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    <div class="message">You haven't chosen a motherboard yet</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status %}normal{% else %}locked{% endif %}">
+                <img src="https://www.digitaltrends.com/wp-content/uploads/2011/10/hard-drive-close-up-shutterstock.jpg?fit=1000%2C695&p=1" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">HDD</h5>
+                    <p class="card-text">Allows you to choose an HDD you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status %}
+                    <a href="{{ url_for('hdds_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    <div class="message">You haven't chosen a motherboard yet</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status %}normal{% else %}locked{% endif %}">
+                <img src="https://www.guru3d.com/data/publish/203/4f9ee81473c02c259152aacb5b628f33576641/big_intel-odyssey-2035-gpu-collection-rgb.jpg.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Graphical Card</h5>
+                    <p class="card-text">Allows you to choose a Graphical Card you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status %}
+                    <a href="{{ url_for('graphical_cards_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    <div class="message">You haven't chosen a motherboard yet</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status %}normal{% else %}locked{% endif %}">
+                <img src="https://cdn.trendhunterstatic.com/thumbs/external-ssd-drives.jpeg?auto=webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">SSD</h5>
+                    <p class="card-text">Allows you to choose an SSD you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status %}
+                    <a href="{{ url_for('ssds_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    <div class="message">You haven't chosen a motherboard yet</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card {% if motherboard_choice_status and is_chosen_everything %}normal
+                {% else %}locked{% endif %}">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYSEhgSEhIZGBgYGBkYGBgaGRkZGBgZGBkaGRgcGRgcIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDs0Py40NTQBDAwMEA8QGBERGDEdGB00NDExMTE0MTExNDQ/NDQxND8xMTQ0MTE0MTQ/MTE0MTQ0NDExNDExNDExMTE0MTQxNP/AABEIAKgBKwMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAABAgADBAUGB//EAEEQAAIBAwIEAwUFBQcDBQEAAAECEQADIRIxBCJBUQUyYRNxgZGxBkJSYqEHcoLB0SOSorLh8PFTY3MzNEOjwhT/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/xAAXEQEBAQEAAAAAAAAAAAAAAAAAEQFB/9oADAMBAAIRAxEAPwD49TpbZth/StVuyo6T76v9oAQsFmOAqiWJOwitRVfD+HA5dwNsf61rtWFSAAJOB1J93U/Ctdng9I1X7ip2RWBeezNBg+iqx7xW72iWdwUMeRQRcYbjWA2sD991/dqjJb4K4TpVIMTDyGj9xQX+aitC+FMZ1XSY30KAo9788fECnbibpUBUTh0ORrAZ2E7raCwf3tH8VZ7lhnh2R7omNd+4Etg/lQN+gf4UQXs8MnnuKY/E7uf8DEfNaiGzvbs3H9U4dCP7zKDVlvhHKs9piQnmXh7aKyjuWYq8esMK5t6DIuAH/wA3Elz8Ut8woOi1+NrFwe90t/pqpTxjn7riCMf/ANign4TtXIR7ew9hPZbV5/8APVzOqqDCgTOeGgY6zM96g644p2GbV0+68H/TVVN24v8A8lm4o7vw6MP7xJ+lHh+JR0B1W26GbFwieuU2rTZtqTFtEJ6+xuFH9+jLfMiqrnqvDv5Tb+DPaP66F+tNcsFBqD3kHQnTdT5mB/iNa79tW8zZEiLyKf8A7ASR8XWufcs+xaeewTkOjM6MO5E6tPqC49KI023cjmVLqnEphj/A8av4ZrJd8Ms3SdB0ON1iCD+ZDkUW4lkhriBlbAu2io1HcggDQx/Kyq3qKtu8QrIGuAXEEAOsqyE7BlnVbOMQdJ/NUVxeK8KuW8ldQ7rn5jcViivSJxLqC1om8g8yn/1VHcx5l/MB7wKiJZ4oEhYYb/dYe/uKQebihFdbifBnXKHUO2zf0Nc1kKmCCD2ODUgSKEUxFSKBYqRTRUigWhTRUioFqU0UKAVKNCglCjUoFqUalAKlSpQCpRoUHY4Xh2uNpU6QCAznZZ6L3Y9v9TWi7cW2fZcIDJ5Wubu5OCFP3V92/eN8w4kaYSQqjSog7t5mP5iARPrFLafSGImY0gwcap1HbsCP4q0Lva+zIt2Oa6eX2gyQTjTa/COmvc9IG9lnjTbYW7IFy6TBuYgMdxbGxM7ufhHmOAEortBDEBFJBEBp1ET3C6fcxpLDaEcggM0ID2Ugl498Ae4nvQdu34gocIi+2useZvMgbrp1ecjMu3LjYjmrWnGI9wKG9vdJ0ySzIPypEF+uxVR0DCvOWG0Wm0kAudJM/dABYA/mJE+i0/D3PZ2zpYBnYqx/IoUlRjZi2e4UDvSo9Qb4BBZ/aFSGCqVFlCpBGylGI/KhB/FWTxLifbXGuH2auxkm3ZRRPfmBIPqCK5fBWRB9nJJOYnAxAA9D19RXvfs19mQALl4STsp6e+g8athzvdvH+JgPkKY8J2a6PUM8/rX1xPDk/wCmvyFXr4cn/TX5ClK+Q8NqSQb1wz+JtUfwsCp+Vam5hzqrr3ACvj0PITtiE99fULngdl/NbX5V5b7T8Lw/DJotiGLKWABbSNgIEmSCTHZSaUecDmJVta5EOTII3AY8yESMZXIMEEGgwAEp5STKMMT1DKPK2RzLk4yRik9umhmkxKr5Lg5skYKyYGvbaR3FUX2L229mSCxQBtFzfmzGmTjVsDkjvVVzOKuiy+q2QUcEFWhlJU8yOBuRIM48wIg7XcLwrF1uWDFtgfNzQNntuPvDb0IKnBrXwPhlu2mm5qYFlaDauYIVgSEKSRlZORtXVW6idH0nAHsrgbAzy6ZjIzEbVByH8M9mwuWXZCDI6hT1X1Geu4InrS8XzMtwQlw+VhtqEakf8QyCCcwwB7jrjiEU5D6TIA9ncnoTy6ZjIzEVyvFNJXBYDVI1I4O3NjTPVcxFUbOGuC4geIOzD8LDcVXf4ZXEMoP++h6Vl4PxO9bU+wuIAxltVhnloAmTbPQCpxPivFPGp0aOgsOv+W2KlGTiPB+ttvgf5GuZdsMhhlI+nzr0HCXnKs16RBAUKjCe88pYYjOmD3o3HDSNB0wOZgVk9RpbPxx7utB5mpXR4nhl6Y+nyrO3Bv7M3fZsUBC64OjUdhq2nG1BlihFORQIqBDUimoRQChFNFSgWpRqUC1KNCoBUo0KAVKNCg6lu5Db7j6f8/pVqcWVcMCAehAGCMjp6mua2qYj3GpJImfh/Q1qjr8X4i1w/wBowYEaTKr3kdMZJzvmsxsKBOglesBiMbGR2z8/Ss9kAOZ5hGY6++t1pnWyCHlA3lPmUz0PUUFPFW1tlVZDpYB+6lTsykNnqP8Aiqrl5OlvG5lsN6iBg/1roMlq9YZpK3EOoLPI6t5tK/dYRPLv1HWuVbttPKTn7pE/oKC9OIKMtywCpUzIbm90R/X9a9TwH7QrqALetq8dc22juYBU/ACvH3FjEA9TpMEHtB2+VJqIG7j9f6VB9JT9ptn71i58GQj5mKN39qNsDk4difzOF/yq1fNluHJ1NtHkU79CSe01A7fif4LH0NEe1439oXFXRFtNCnqBp/vXGJx6jSfWsHhXHFmY3XDu0aQrAKsyW1OQRkxJXWxjO1eZ0yZZSfV2gfyP610eBts5022IPa2ufi5I/wA1MHs7b20YrcUXHjkRRkT2UnlBjLucwM4AF9viVRSbo525UVZb10ptqPUtjYTpAEeZt8E9kT7S1bnq7yZ9ABpJ/v1o8Ns32YtbQuxGXclFI6ZeHI/KAB2IrQ763lFtrlwwZCgTOkfdUR5mJ7CScDAFKHm2btw6TjBPkUbAxjV1MdwMwDXF4b2ntCpUXbgkQhDBJ3AjlT1JOo/mqX2uKw9qkGeRA0gHuFEl39Yx0AzQdTVqU3WxOwONKD8XYnJPbA6TXK8Sm4ntIPMQEWMxsDHdj07aetF7HE3G0LZkCDpLQSe7wCMfhmO84j0XhHhT2118RpL9FXKp8Tu3r0/Wgw+G+Fi1aCOAWPM2AYJ6D3YHwpn4ZVMhVBjcADHv+Fdm4lPw3g73TgQO5/3+kz6VB49vEbTOLaPqJOSoLKo7sR0901v4b7P3+IaLaQPxNIEdCBEwehiPUV73w37M2bOSoLTOMZ7yAM+oAPea38d4vw/CrDuqQU5Blv7R9CHQMwSDn0NKPN+FfYCxbHtOIOsgSdQGkRvyZX4HV6EVyvtzxVm/4Vbv8OhVHcadSwxCPpzkmOUxnYivVeGeN3uJvKEsaLA9utxnPPKPotlVkQGIc5B2OcVxP2qoq8CiIoVQ6gKAAABEAAYAxUHx4ihFPUqqrihFWRUioKtNDTVsUCKCoipFORSkUCVKYihFAtSjUqAUKNSg6zcFqzZbX+QwHHu6N8M+lYmSMCQR0PQ9ZBoW7xFb14xbgi6uroGGHH8XX3Ga0KLT6XlRHKRmI+VKI0xmZmZx6YrQ3CGNVtta9gIce9OvvE1SloN1oFRSxgLPu3q65f8AZQEZ0uAkPMQojYbmc79K02OB5SQTrxpIYrGcmaw3vDbwJPs2bJzAafUxQUvcJEcrSBPcR0md8VSo7Bh7j/pWs8M6kzbPKsZRo+Hc1lCflHz/ANKgut2WPRvi0D6b09/hGC6ox21gn5RQt2/+2Np5idtwRjaIrq8HwrlQVsWveUZj+gqjhqAPuqPe3+orZY4iPvt7kGn/ABY+tdZ/svfuS62xJ+6EdVPzOKnC/Y/jn/8AiCD8zov0k1BTwnElOZLaKfxudTf1/wAVaBxquCLjveJ+6mE+OmAfixrtcD+zpzBvX0HooZz82gV6zwr7JcPZgkG4w2NyNI9yDHzmqjy/hHCcVdTTYRbKd1AJ/vHkX4BjXoeE8Et8GpuXSzu2GfLNmTBc8xGDgRXd4rxC1ZEO4B6IMt8FFYH8Te55BoXu2XPuXYfGg0ciJIAQbxAB+Mb1SttrnlWB+JsfIdfpS29KnUeZvxMZPw6D4VzuP+06ICLIN19BdVTIIDhNxnc9B0NEeh4bgkTLc59dvl29DNZvFvtVY4ZWltbrbDhE5iyl1tiCMDmYDfv2rxniHjdxmYtdPI3trdqyZZ7ajQUa4sxzsQZnytjArEt4cJAQhBa8qpz371gtpguvKJuuTGOuOUCor0fi32kvhm1uLCI7yi8/EXLLKLdp0XbNxyd12HbPKINs6SFtlZsPcu/2l99A0cJeS0cpNwu0jogz3wqw4XEC2LYZCBz8TdsTFp1HlBN1y33Yhd9Iqq/xo4c6WHsoD2mZl9pedbSaeHuqpwhDktgg8q5O5D2P2SFwcQXCNDLp4h7rarjHhwLVhlXBUNpdjIMnVzYFJ+1V54NP/IPoabwThGtXku29RS7ZT2z3dQuO9tFS2NDZXGpjjMnO1Y/2mXdXCoP+5/8Ak0Hy+pRiiFqqWKBp4oxQV1Ip4oRQVxQIpzQIoqoikNXEVWRRC0KaKBFQLUqVKggNMGpKM1Rot3ypkGK2pxqv/wCoM/jXDfHo3xrlTTBqUei4a7GZDL+Jen7y7j6V2+EuggEGRXhrd4qZBg10OF8TKmTg9xsf3l2NWj6Bwt+CDEwRiYxXF8Q+zRv3L3EO+nU7MAI8oAifWq+A8YU+YgfmGV/0+NX3rN1ixtupR2DwWZSDAHKy9MVUUJ9nWvWzcV9MnQgO3IAiz6cs17HwDh24fh0suQSgiQTB6zmuV4WbiIFuupiNIUGBAjJOScmuieKCiWYAdyYFB13vhRqZgANyTAHxrJwHjti/ca3auh2QSYmI9G2NeO+0XjHDXgEKtdKnGliifxfiFcV/EXZfZrFtPwINK/E7t8ag+k8f9pbFnl1a3/CmfmdhXB4r7S3ruFPs07Llj736fCvH+3VBJMQJoHxBjOgbaTqbAKnJgH0qj1FriVTJMdyTk9TJOTVN77QMQV4dCzaA6k4XLRnrgSfhXmxc1GZLlZdZwml8QQew93WrG4iRoQaio1IokIBOmDMevyPepVdXiPEmuP5zcKn2yIklCoOiGO+84HRTnM1UOK0cqNq0f2lu3bGssinSUe55vOSTv5W2kVzRd+6p1af7S2lvy6QdOljueYk9dj3qxtSH2YBGmLiW0UyVG6s/mMs09dj3FB0bLrbIRGCaOdETmZ7akhle4gLAa2MjOzY2oLcHD8qcns8qE5r1y1MFWcYzccmMbHGBWBLujlQxo51S3zMyjzK9wZjUTIzscVpsr7MqutbSqwCgEa3SCSrPM+ZiY/TaiGFwcONIhNAZQFOu9ctE6UOryj+0dm6dMcoqv7H8Et7jAzeSwFjVzCRypIG+QWxHlFUeKXF4e3otrHLok+YiScn3kmrfs7e9nwzs1z2SajreJd2jCqNhAjcNknHWg9twXHrbL+1uaTccaRB1HRbRCQgkyWRjp8xEE5Jrk/bu6TZQEEHXMEEHynoa4dv7Vpacexscsw7sZuOudidh1iY9BW77V8WLtu26mVaGHuIYj60HlQtGKYVNNFJFSKcrQiqKyKU1YaQ1AlAinigRQIRVbCrSKU0VSRQNWGlNEJUokUKgSpUqVAak0KlA00QaWpQWpdKmQYrp8D4w9vrHpup+HT4Vx5ozVo9Zc+0zaYtoJ6kmR8K5HE8W90zcct6dPlWThoK59fn0pthE1RaX0iTtV1lGbuPTqR3ztjPyrIzSOw2zmI2Me+t9i+ChltJXpETqPN+lBE4Ze0nTiTJIY4BBx61OKEAaVB3I1bBNjM+47GnXiVzpMRLDHpCjPTr8ar4hYdXVTgSnZs6Sc75B2qgadP5ypJVPKANoIOR1x6GmW+fKgBjmRQOWAYg6sg77Rt61RrGykuRzqNlA7Z3/ANDQDasDmjnRVgKIwQZ9Z27etQdG1x5UME0sSpKqqYXOQD3kbjtXW4Hh04hgz8UnMykrr0tbbmLSCdVxRpiQQJKjNeb1TyjMc6onlGncEn17dqgaeVTjzqibAjzAk539+1BpPGA3GtpptquollXMTso3AztNdLhOH0f2iWzGqDcbnYmJjX5UMZgSY6CvM64dyfwfzWvrPhfhwNtUK9iTOCJZhyxg85zPQbdSPmHjr6mn8x+tW2Sh4e0jzp1uTABO42BIBME9R76p8cQo7Id1dlPvUkH6VSyM1hNImGf6iis3EJpYwGCknTqidM4kjBMRNek4pp4WwOyp/lrz1/indVRzhJgQBBO89ScDftXevf8At7P7q/5aYMIWpFGpVUpFAimoUFZpatNAiiK6U1YRSkUFZFIwqw0hqKrK0pqw0poio0KcihFQVVKlSoJUqVKCVKlSglSpUoNfD+WtNq3qmQYAkxEjtvWXhtq0o8YmAd6oqu8rGCCNixzkdvj9KCt1ImMMTtHeKj286okHDTmOxA3qezPmPNAgztpJ3AoLVXr5o2nbSfQ1aMAgAMYOmdgBEgA9enz71RZc7eYrn8sHbBq9ewMxlfw43EHfNAjJAxzHzKuyjacH3/WgDq5VM/fVVMKIwQZ9fpTXzqIABMDUoGF1TmZ9/wClVgzyrn7yquFBG4M75/lVFgzyjP3lVcKCu4JO+foKLRAA/eCKeUMu4JjYn37b0k6sAz95VXChl3BJ3k/yogzyjM5CrhQy7gk9yfpQYb7czeo/pX2DwPx+ynA2rl24ASigqMuWTlaFGdwfTNfMrPBw2s79ulawsUiKPtVxS3r73UUqrtqAMTJA1Ex3Mn41TwjsttGSJDPuARuOhwar8Rtk7dK2+BQyBdIYhiAD3O2P606rPwvh73LmpxKliXbYE7ke8+neuv4r5V9/8qutuSWDfdOncERpDCIxHN0xWfxQ4X31RzgKlShRUigVomhNACKUinBoEUFZoGmNA0QhqtqtNIRQVmlinIqGoqoikirWFJRFFGpRrIFSjUoBUo0KCUKNSg0cLsavMdY+NUcL1q5wIzHx6VQ6P136MemascY7xnOxGwrMDOd4wx6e+tPDtMgmSufQjoB86mrjMQektpyvRdJ99aLeYzI3WDAHcZqu8naWiSoPljYgj50bRnAMjzKBhRG4zVRZdWVEZgyFmF1ZnfcbfpVQzgZ+8AuFVl3Bnuf5VfcWVMZ2gTADDPXHaqBnAzOQByqrL0nbJNAwM4GZyAvKqsu8k9yfpRHNgZ6gLyqrLuCesk/SkGfWeg5VV19djJP604z6/wCFFYfWWNVHQSYE7wJjaetPFJbmBO8Z9/WrBVUrW5qjgeGZLmtTyncd+1aXcKNTGAOtXqaDQzySYAnoNqw+JHAqy5xCruc9utYb/EFzkQOlBVUqUYoqUAKkVIoJjvQJqUIoFIoGoahogGkYUTQNAtKaJqVFVmlqw0lBRRqRRiogVKaKkUCVKaKEUAqUaFQX8L1q51BGY+O1UcPuavcAjO1XEKDOTzEYb8Md6sR/4tOR20/GqlzvzFcH8MUxJggc0bfh0/7/AJ0U15gxAWWgah+HO8z/ALxVlgSN+UnEYURuM7/8VQFnAzHMvRR6Z3q1bc4mBOOiqRvPcUgtujUoIE5nfSNQk+6NvnVAz6g9uVVZfrJNbVbGdyIYxAk5nHp9TWEZ9RsfuqrD3byTVDDPrP8ACqsvu3kmiM536SeVVZe0byxpZnJz0JOFVl2ON5J+tMilvXoScKGUYIA3yfrUR0LcwJMmMnuetWg1nV9IGoyY37mka+T5cVpWi+UiHAI3gzmPdVT8SzYXA/WqdHU5phQBUqPTTSOaKgpqQGiDQMaE0NVSaBqVqM0JoA1Iy05oGgQilNOTSGgU0ppjSGoAaSKYmloKhRFAUaIMVIqA04oEigRVkUIoEilIpyKBFQNY3rQ4BGdqz2d60QDgiaCsHvzFdwPLBrQiiBmRuvaBkiDVar8Y27RTjt06dhGTg1RZAMf8AHc7/L5Uw+uD0AJydvT61Xr79em0Hc+npS+0LfHBOwB9SN6C4uNz7jiBn1HpH61QF1dNXQzhQV6wN8/zpgo3bOM9p+FMbk7UBFsbuZMCZ2x2FM10nb51WE7000BCdTTgUqmmmghNLNEtQopppGNSaU0QdVTVQigaobVU1Us1JoCWqTSmoKBqM0s0Jook0pqE0pNEA0pomgailNLNFqSgroipUqINSpUqhw/emqVKBSKBqVKCJvV4wcjoD86lSgmrpvGR7h76BecD3jt671KlAdPf0MbAGibnapUoCBO9WCpUoDUqVKAimqVKoUmhNSpQGaUtUqVAJoTUqUEmjNSpQSaE1KlVQLUpNSpUAmoWoVKAE0hNSpQKTSzUqUR//9k=" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Power Supply</h5>
+                    <p class="card-text">Allows you to choose a Power Supply Module you want to use in your PC setup.</p>
+                    {% if motherboard_choice_status and is_chosen_everything %}
+                    <a href="{{ url_for('power_supplies_page') }}" class="btn mr-2">
+                    <i class="fas fa-lock"></i>
+                    Click here to select a part
+                    </a>
+                    {% else %}
+                    <br>
+                    {% if not motherboard_choice_status and not is_chosen_everything %}
+                    <div class="message">You haven't chosen motherboard yet</div>
+                    {% elif not is_chosen_everything %}
+                    <div class="message">You haven't chosen everything yet</div>
+                    {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

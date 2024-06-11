@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+Graphical Card Choice
+{% endblock %}
+{% block content %}
+<h1>Graphical Card Choice</h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Graphical Card</th>
+            <th scope="col">VRAM</th>
+            <th scope="col">TDP</th>
+            <th scope="col">Price</th>
+            <th scope="col">Other</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in graphical_cards %}
+        {% include 'includes/items_modals.html' %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.graphic_card }}</td>
+            <td>{{ item.vram }} GB</td>
+            <td>{{ item.tdp }}W</td>
+            <td>{{ item.price }}$</td>
+            <td>
+                <button class="btn btn-outline btn-success"
+                        data-toggle="modal"
+                        data-target="#Modal-AddingConfirm-{{ item.id }}">Choose this Graphical Card
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

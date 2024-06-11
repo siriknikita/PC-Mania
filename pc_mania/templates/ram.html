@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+RAM Choice
+{% endblock %}
+{% block content %}
+<h1>RAM Choice</h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Size</th>
+            <th scope="col">Type</th>
+            <th scope="col">Number of Sticks</th>
+            <th scope="col">Price</th>
+            <th scope="col">Other</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in rams %}
+        {% include 'includes/items_modals.html' %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.size }} GB</td>
+            <td>{{ item.ram_type }}</td>
+            <td>{{ item.sticks }}</td>
+            <td>{{ item.price }}$</td>
+            <td>
+                <button class="btn btn-outline btn-success" data-toggle="modal"
+                    data-target="#Modal-AddingConfirm-{{ item.id }}">Choose this RAM</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

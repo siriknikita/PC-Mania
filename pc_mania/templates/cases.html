@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Case Choice
+{% endblock %}
+
+{% block content %}
+<h1>Case Choice</h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Motherboard Form Factor</th>
+            <th scope="col">Price</th>
+            <th scope="col">Other</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cases %}
+        {% include 'includes/items_modals.html' %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.motherboard_form_factor }}</td>
+                <td>{{ item.price }}$</td>
+                <td>
+                    <button class="btn btn-outline btn-success" data-toggle="modal"
+                            data-target="#Modal-AddingConfirm-{{ item.id }}">Choose this Case</button>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

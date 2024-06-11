@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+HDD Choice
+{% endblock %}
+{% block content %}
+<h1>HDD Choice</h1>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Size</th>
+            <th scope="col">RPM</th>
+            <th scope="col">Cache</th>
+            <th scope="col">Price</th>
+            <th scope="col">Other</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in hdds %}
+        {% include 'includes/items_modals.html' %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.size_in_tb }} TB</td>
+            <td>{{ item.rpm }}</td>
+            <td>{{ item.cache_in_mb }} MB</td>
+            <td>{{ item.price }}$</td>
+            <td>
+                <button class="btn btn-outline btn-success" data-toggle="modal"
+                    data-target="#Modal-AddingConfirm-{{ item.id }}">Choose this HDD</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
