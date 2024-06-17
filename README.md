@@ -1,5 +1,9 @@
 # PC-Mania
 The PC Mania is the Coursework website built using Flask with interactive and user-friendly design to help them build their own custom PC without any troubles.
+
+## DESCRIPTION
+The "PC-Mania" PC Designer website was developed. The main programming language is Python. The website is created on the basis of Flask and aims to simplify the difficult choice of people who want to assemble a computer on their own, but do not have sufficient knowledge about all the nuances of compatibility, recommendations for choosing components, and more. The developed website contains a convenient interface.
+
 ## TECHNOLOGIES USED
 - Python
 - Flask
@@ -14,7 +18,6 @@ git clone https://github.com/siriknikita/PC-Mania.git
 pip install -r requirements.txt
 python run.py
 ```
-Note: You can copy the command using the box on the top right corner of the box.
 3. Open the provided link next to the **Running on** text.
 4. Build your first custom PC without any issues!
 ## LESSONS LEARNED
